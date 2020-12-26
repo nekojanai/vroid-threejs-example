@@ -1,0 +1,37 @@
+{
+  "name": "threejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "browserify -g [ babelify --presets [ @babel/preset-env ] ] main.js -o dist/bundle.js",
+    "watch": "watchify -g [ babelify --presets [ @babel/preset-env ] ] main.js -o dist/bundle.js -v"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pixiv/three-vrm": "^0.5.5",
+    "browserify": "^17.0.0",
+    "three": "^0.124.0",
+    "watchify": "^3.11.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babelify": "^10.0.0",
+    "http-server": "^0.12.3"
+  }
+}
